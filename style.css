@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Use Poppins for body text */
-    background: rgba(255, 255, 255, 0.5) url('image.png') no-repeat center center fixed; /* Faded background image */
-    background-size: cover; /* Ensure the image covers the entire background */
-    color: #fff; /* White text for better contrast */
+    font-family: 'Poppins', sans-serif;
+    background: rgba(50, 50, 50, 0.6) url('image2.jpg') no-repeat center center fixed; /* Reduced opacity */
+    background-size: cover;
+    color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,31 +18,59 @@ body {
 header {
     text-align: center;
     padding: 2rem 0;
-    background-color: rgba(43, 46, 74, 0.8); /* Semi-transparent dark background */
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
 }
 
 header h1 {
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat for the name */
-    font-size: 3rem; /* Larger font for the name */
-    font-weight: 700; /* Bold weight */
-    color: #fffa65; /* Soft yellow color */
-    margin-bottom: 0.5rem; /* Space below the name */
-    animation: fadeIn 1s ease-in; /* Animation for the header */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffcc00; /* Soft yellow */
+    margin-bottom: 0.5rem;
+    animation: fadeIn 1s ease-in;
+}
+
+nav {
+    background-color: #007acc; /* Soft blue */
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00; /* Change to soft yellow on hover */
 }
 
 .marquee {
     width: 100%;
     overflow: hidden;
-    background-color: #3498db; /* Bright blue */
     padding: 0.5rem 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Soft background for visibility */
 }
 
 .marquee p {
-    font-size: 1.2rem; /* Larger font for marquee text */
+    font-size: 1.2rem;
     white-space: nowrap;
-    color: #fff; /* White text */
-    animation: scroll-left-right 20s linear infinite; /* Continuous scrolling effect */
+    color: #000; /* Black text for readability */
+    animation: scroll-left-right 20s linear infinite;
     display: inline-block;
 }
 
@@ -62,78 +90,81 @@ section {
     max-width: 800px;
     text-align: center;
     margin: 1.5rem 0;
-    background-color: rgba(255, 255, 255, 0.9); /* Light background for sections */
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent */
     border-radius: 0.5rem;
-    padding: 1.5rem; /* Slightly increased padding */
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
-    opacity: 0; /* Start with invisible sections for animation */
-    transform: translateY(20px); /* Start from below */
-    animation: slideIn 0.5s forwards; /* Animation for sections */
+    padding: 1.5rem;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s forwards;
 }
 
 @keyframes slideIn {
     to {
         opacity: 1;
-        transform: translateY(0); /* End in original position */
+        transform: translateY(0);
     }
 }
 
-.about p, .experience p {
-    font-size: 1rem;
-    color: #333; /* Dark text for readability */
-    line-height: 1.6;
+.about p {
+    color: #f0f0f0; /* Light text for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
 }
 
 .skills ul {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping to the next line */
-    justify-content: center; /* Center align the skills */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .skills li {
-    background-color: #fffa65; /* Soft yellow for skills */
-    color: #2b2e4a; /* Dark text for better readability */
+    background-color: #ffcc00; /* Soft yellow for skills */
+    color: #2b2e4a;
     margin: 0.5rem;
     padding: 0.5rem 1rem;
-    border-radius: 0.3rem; /* Rounded corners */
-    font-weight: 600; /* Medium weight for skills */
-    flex: 0 1 calc(33.33% - 1rem); /* 3 items per row, accounting for margins */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling and shadow effect */
+    border-radius: 0.3rem;
+    font-weight: 600;
+    flex: 0 1 calc(33.33% - 1rem);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skills li:hover {
-    transform: scale(1.05); /* Slightly scale up on hover */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .experience h2, .skills h2, .connect h2 {
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    color: #ff7e5f; /* Use a fancy color for headings */
+    color: #ffffff; /* Changed to white for better contrast */
     margin-bottom: 0.8rem;
-    font-weight: 700; /* Bold headings */
+    font-weight: 700;
 }
 
 .job {
     margin-top: 1rem;
     padding: 1rem;
-    background-color: #e9ecef; /* Light grey background for job sections */
+    background-color: rgba(255, 255, 255, 0.25); /* Improved contrast */
     border-radius: 0.5rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s; /* Animation for job sections */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
 }
 
 .job:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
 }
 
 .job h3 {
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat for job titles */
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
-    color: #2b2e4a; /* Dark color for job titles */
+    color: #f0f0f0; /* Light color for better contrast */
+}
+
+.job p {
+    color: #f0f0f0; /* Light text color for readability */
 }
 
 .connect ul {
@@ -146,23 +177,46 @@ section {
 
 .connect a {
     text-decoration: none;
-    color: #2b2e4a; /* Darker color for links */
+    color: #ffffff; /* Soft blue */
     font-size: 1.1rem;
-    font-weight: 600; /* Medium weight for links */
-    transition: color 0.3s, transform 0.3s; /* Transition effect for links */
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .connect a:hover {
-    color: #ff7e5f; /* Change to coral on hover */
-    transform: scale(1.1); /* Slightly scale up on hover */
+    color: #ffcc00; /* Change to soft yellow on hover */
+    transform: scale(1.1);
 }
 
 footer {
     width: 100%;
     padding: 1rem 0;
-    background-color: rgba(43, 46, 74, 0.8); /* Semi-transparent footer */
-    color: #fff; /* White text for footer */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f0f0f0;
     text-align: center;
     font-size: 0.9rem;
     margin-top: auto;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ffcc00; /* Soft yellow */
+    color: #2b2e4a; /* Darker text color for contrast */
+    padding: 10px 15px;
+    border-radius: 50px; /* Rounded button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.back-to-top:hover {
+    background-color: #007acc; /* Soft blue on hover */
+    color: #ffffff; /* White text on hover */
+    transform: translateY(-3px); /* Slight lift effect */
 }
