@@ -1,56 +1,168 @@
-/* Reset default styling */
-* {
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Use Poppins for body text */
+    background: rgba(255, 255, 255, 0.5) url('image.png') no-repeat center center fixed; /* Faded background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    color: #fff; /* White text for better contrast */
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-height: 100vh;
 }
 
 header {
-    background-color: #4CAF50;
-    padding: 20px;
-    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    background-color: rgba(43, 46, 74, 0.8); /* Semi-transparent dark background */
+    width: 100%;
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+header h1 {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for the name */
+    font-size: 3rem; /* Larger font for the name */
+    font-weight: 700; /* Bold weight */
+    color: #fffa65; /* Soft yellow color */
+    margin-bottom: 0.5rem; /* Space below the name */
+    animation: fadeIn 1s ease-in; /* Animation for the header */
 }
 
-.profile-links ul {
-    list-style-type: none;
-    margin: 20px 0;
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background-color: #3498db; /* Bright blue */
+    padding: 0.5rem 0;
+}
+
+.marquee p {
+    font-size: 1.2rem; /* Larger font for marquee text */
+    white-space: nowrap;
+    color: #fff; /* White text */
+    animation: scroll-left-right 20s linear infinite; /* Continuous scrolling effect */
+    display: inline-block;
+}
+
+@keyframes scroll-left-right {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+section {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    margin: 1.5rem 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for sections */
+    border-radius: 0.5rem;
+    padding: 1.5rem; /* Slightly increased padding */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+    opacity: 0; /* Start with invisible sections for animation */
+    transform: translateY(20px); /* Start from below */
+    animation: slideIn 0.5s forwards; /* Animation for sections */
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End in original position */
+    }
+}
+
+.about p, .experience p {
+    font-size: 1rem;
+    color: #333; /* Dark text for readability */
+    line-height: 1.6;
+}
+
+.skills ul {
+    list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: center; /* Center align the skills */
 }
 
-.profile-links li {
-    margin: 10px 0;
+.skills li {
+    background-color: #fffa65; /* Soft yellow for skills */
+    color: #2b2e4a; /* Dark text for better readability */
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem; /* Rounded corners */
+    font-weight: 600; /* Medium weight for skills */
+    flex: 0 1 calc(33.33% - 1rem); /* 3 items per row, accounting for margins */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling and shadow effect */
 }
 
-.profile-links a {
+.skills li:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.experience h2, .skills h2, .connect h2 {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
+    font-size: 1.5rem;
+    color: #ff7e5f; /* Use a fancy color for headings */
+    margin-bottom: 0.8rem;
+    font-weight: 700; /* Bold headings */
+}
+
+.job {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e9ecef; /* Light grey background for job sections */
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* Animation for job sections */
+}
+
+.job:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.job h3 {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for job titles */
+    font-size: 1.2rem;
+    color: #2b2e4a; /* Dark color for job titles */
+}
+
+.connect ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.connect a {
     text-decoration: none;
-    color: #4CAF50;
-    font-weight: bold;
-    font-size: 1.2em;
+    color: #2b2e4a; /* Darker color for links */
+    font-size: 1.1rem;
+    font-weight: 600; /* Medium weight for links */
+    transition: color 0.3s, transform 0.3s; /* Transition effect for links */
 }
 
-.profile-links a:hover {
-    color: #333;
+.connect a:hover {
+    color: #ff7e5f; /* Change to coral on hover */
+    transform: scale(1.1); /* Slightly scale up on hover */
 }
 
 footer {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: rgba(43, 46, 74, 0.8); /* Semi-transparent footer */
+    color: #fff; /* White text for footer */
+    text-align: center;
+    font-size: 0.9rem;
     margin-top: auto;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    font-size: 0.9em;
 }
